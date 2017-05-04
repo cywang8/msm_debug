@@ -2,7 +2,7 @@
   <h1>Add Movie</h1>
 </div>
 
-<form class="form-horizontal">
+<form action="/create_movie" class="form-horizontal">
   <!-- Label and input for title -->
   <div class="form-group">
     <label for="title" class="col-sm-2 control-label">
@@ -55,11 +55,12 @@
 
   <!-- Label and input for director_id -->
   <div class="form-group">
-    <label for="director_id" class="col-sm-2 control-label">
+    <label for="director" class="col-sm-2 control-label">
       Director
     </label>
     <div class="col-sm-10">
-      <%= select_tag(:director_id, options_from_collection_for_select(Director.all, :id, :name), :class => "form-control") %>
+      <input type="text" id="director" name="director_id" placeholder="Director" class="form-control">
+      <% select_tag(:director_id, options_from_collection_for_select(Director.all, :id, :name), :class => "form-control") %>
     </div>
   </div>
 
